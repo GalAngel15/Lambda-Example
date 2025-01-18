@@ -1,0 +1,6 @@
+{
+    "body": "{\"name\": \"John\", \"num1\": 5, \"num2\": 10}",
+    "httpMethod": "POST",
+    "path": "/add"
+  }
+  
