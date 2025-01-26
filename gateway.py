@@ -11,10 +11,11 @@ class AddRequest(BaseModel):
 
 @app.post("/add")
 async def call_lambda(body: AddRequest):
-    body_dict = body.dict()
+    body_dict = body.model_dump()
     response = requests.post("http://127.0.0.1:3000/add", json=body_dict)
     return response.json()
 
 @app.get("/hello")
 async def say_hello():
-    return {"message": "Hello from FastAPI!"}
+    response = requests.get("http://127.0.0.1:3000/hello")
+    return response.json()
